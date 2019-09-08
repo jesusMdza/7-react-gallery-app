@@ -1,10 +1,12 @@
 import React from 'react';
 import './index.css';
 
+import SearchForm from './SearchForm';
+
 function App() {
   return (
     <div className="App">
-      <h1>What the freak is your freaking problem</h1>
+      <SearchForm />
     </div>
   );
 }
