@@ -4,14 +4,8 @@ import apiKey from './config';
 
 class SearchForm extends Component {
 
-
   state = {
     value: ''
-  }
-
-  getData = () => {
-    const key = apiKey;
-
   }
 
   handleChangeValue = (e) => {
