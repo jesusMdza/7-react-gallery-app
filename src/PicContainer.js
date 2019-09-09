@@ -2,9 +2,14 @@ import React from 'react';
 
 const PicContainer = () => {
 
-  return(
-    
+  return (
+    <div class="photo-container">
+      <h2>Results</h2>
+      <ul>
+
+      </ul>
+    </div>
   );
 }
 
-export default NoResults;
+export default PicContainer;
