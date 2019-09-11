@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import './index.css';
 import axios from 'axios';
-import { BrowserRouter, Route, Switch } from 'react-router-dom';
+import { BrowserRouter, Route, Switch, Redirect } from 'react-router-dom';
 
 import SearchForm from './SearchForm';
 import Navigation from './Navigation';
@@ -15,9 +15,9 @@ class App extends Component {
     photos: []
   }
 
-  componentDidMount() {
+  getResults = (tag) => {
     const key = apiKey;
-    axios.get(`https://www.flickr.com/services/rest/?method=flickr.photos.search&api_key=${key}&tags=cats&per_page=24&format=json&nojsoncallback=1`)
+    axios.get(`https://www.flickr.com/services/rest/?method=flickr.photos.search&api_key=${key}&tags=${tag}&per_page=4&format=json&nojsoncallback=1`)
       .then(response => { 
         this.setState( { photos: response.data.photos.photo }); 
       })
@@ -25,15 +25,14 @@ class App extends Component {
 
   render() {
 
-    console.log(this.props); 
-
     return (
       <BrowserRouter>
         <div className="container">
-          <SearchForm />
+          <SearchForm getResults={this.getResults} />
           <Navigation />
           <Switch>
-            <Route exact path="/:tag?" render={ () => <PhotoContainer data={this.state.photos}/> } />
+            <Route path="/:tag" render={ () => <PhotoContainer data={this.state.photos} getResults={this.getResults} /> } />
+            <Route exact path="/" render={ () => <Redirect to="/random" /> } />
             <Route render={ () => <NoResults /> } />
           </Switch>
         </div>
