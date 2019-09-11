@@ -1,7 +1,10 @@
 import React from 'react';
 import Photo from './Photo';
+import { withRouter } from 'react-router-dom';
 
-const PhotoContainer = ({ data }) => {
+const PhotoContainer = ({ data, getResults, match  }) => {
+
+  const tag = match.params.tag;
 
   let photoKey = 1;
   const photos = data.map(photo => 
@@ -25,4 +28,4 @@ const PhotoContainer = ({ data }) => {
   );
 }
 
-export default PhotoContainer;
+export default withRouter(PhotoContainer);
