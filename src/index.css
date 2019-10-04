@@ -34,7 +34,7 @@ a {
 }
 
 input {
-  font-size: 1em;
+  font-size: 1.2em;
   width: 100%;
   background-color: #2D2F33; /* changed */
   padding: 13px 25px;
@@ -45,7 +45,11 @@ input {
 }
 
 input, select, textarea { /* changed */
-  color: #B8B8B8;
+  color: #cfcfcf;
+}
+
+#search::-webkit-search-cancel-button { /* changed */
+  -webkit-appearance: none;
 }
 
 .main-nav ul { /* added */
@@ -58,7 +62,7 @@ input, select, textarea { /* changed */
 
 .main-nav a {
   display: block;
-  font-size: 1.1em;
+  font-size: 1em;
   border-radius: 4px; /* change */
   padding: 3px 10px;
   color: #9A9A9A; /* change */
@@ -72,27 +76,22 @@ input, select, textarea { /* changed */
 
 .main-nav li a.active { /* added */
   background: #A282FF;
-  color: #3B1B9B;
-}
-
-.photo-container ul {
-  display: flex;
-  flex-flow: row wrap;
-  justify-content: space-between;
-  -ms-align-items: flex-start;
-  align-items: flex-start;
+  color: rgb(41, 19, 109);
 }
 
 .photo-container ul li {
-  width: 300px;
-  height: 300px;
-  overflow: hidden;
+  /* width: 20vw; */
+  max-width: 350px;
   margin-bottom: 15px;
+  margin-right: 15px;
+  /* height: 20vw; */
+  /* background-size: cover; */
+  overflow: hidden;
 }
 
 .photo-container ul img {
-  width: 100%;
-  transform: scale(1.25);
+  width: 350px;
+  transform: scale(1.05);
 }
 
 .photo-container .not-found {
