@@ -4,6 +4,7 @@ import { withRouter } from 'react-router-dom';
 import Photo from './Photo';
 import NoResults from './NoResults';
 import Spinner from './Spinner';
+import Masonry from 'react-masonry-component';
 
 class PhotoContainer extends PureComponent {
 
@@ -48,11 +49,11 @@ class PhotoContainer extends PureComponent {
     } else {
       return (
         <div className="photo-container">
-            { 
+            {
               !this.props.isLoaded ? <h2>Loading</h2> : <h2>{this.props.value}</h2>
             }
             { 
-              !this.props.isLoaded ? <Spinner /> : <ul>{photos}</ul> 
+              !this.props.isLoaded ? <Spinner /> : <ul><Masonry>{photos}</Masonry></ul> 
             }
         </div>
       );
