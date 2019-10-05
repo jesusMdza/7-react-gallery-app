@@ -77,7 +77,7 @@ class App extends Component {
                     getData={this.getData}
                   /> } 
                 />
-                <Route exact path="/" render={ () => <Redirect exact to="/welcome" /> } />
+                <Route exact path="/" render={ () => <Redirect exact to="/space" /> } />
                 <Route render={ () => <PageNotFound /> } />
               </Switch>
           </div>
