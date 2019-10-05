@@ -7,12 +7,14 @@ class SearchForm extends Component {
     value: ''
   }
 
+  // change state of input value as user types it
   handleChangeValue = (e) => {
     this.setState({
       value: e.target.value
     });
   }
 
+  // on form submit, create and push dynamic url path 
   onSubmit = (e) => {
     e.preventDefault();
     const userInput = this.state.value;

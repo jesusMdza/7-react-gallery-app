@@ -17,14 +17,18 @@ class App extends Component {
     isLoaded: false
   }
 
-  // removes photos with a duplicate 'owner' value from data response
+  // removes photos with a duplicate 'owner' value from data response and returns the filtered array
   removeDuplicateOwnerPhotos = (data) => {
     const obj = {};
     let filteredArray = [];
 
+    // set the 'obj' object's key to an owner property from passed 'data' array (object's take unique keys)
+    // 'obj' object equals to corresponding photo object returned from 'data'
     for (let i in data) {
       obj[data[i].owner] = data[i];
     }
+
+    // loop through 'obj' and push each object inside 'filteredArray'
     for (let i in obj) {
       filteredArray.push(obj[i]);
     }
@@ -32,6 +36,9 @@ class App extends Component {
     return filteredArray;
   }
 
+  // takes in value of searched or clicked link
+  // updates state value to user value and isLoaded to false
+  // runs callback to fetch flickr data and change isLoaded to true
   getData = (value) => {
       if (value !== this.state.value) {
               this.setState( prevState => {

@@ -3,7 +3,6 @@ import React from 'react';
 const NoResults = () => {
 
   return (
-
     <ul>
       <li className="not-found">
         <h2>No Results Found</h2>
