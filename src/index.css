@@ -70,6 +70,11 @@ input, select, textarea { /* changed */
   transition: ease 200ms;
 }
 
+.main-nav ul {
+  display: flex;
+  justify-content: left;
+}
+
 .main-nav a:hover {
   border: 2px solid #A282FF;
 }
@@ -80,12 +85,9 @@ input, select, textarea { /* changed */
 }
 
 .photo-container ul li {
-  /* width: 20vw; */
   max-width: 350px;
   margin-bottom: 15px;
   margin-right: 15px;
-  /* height: 20vw; */
-  /* background-size: cover; */
   overflow: hidden;
 }
 
@@ -122,6 +124,27 @@ input, select, textarea { /* changed */
   .photo-container li {
     margin: auto;
   }
+
+  .main-nav ul {
+    margin: 15px 10px;
+  }
+
+  .main-nav a {
+    font-size: 14px;
+  }
+
+  input {
+    font-size: 1em;
+    padding: 10px 25px;
+  }
+
+  .search-form {
+    max-width: 100%;
+  }
+
+  .main-nav ul {
+    display: block;
+  }
 }
 
 @media only screen and (min-width: 768px)  {
@@ -132,11 +155,6 @@ input, select, textarea { /* changed */
   .container {
     max-width: 1200px;
     margin: auto;
-  }
-
-  .main-nav ul {
-    display: flex;
-    justify-content: left;
   }
   
   .main-nav li {
