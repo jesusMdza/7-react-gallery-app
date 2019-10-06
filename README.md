@@ -8,4 +8,5 @@ Because this is an app that fetches data which can be prone to errors on flickr'
 
 Running the App:
 If you downloaded the files, run 'npm start' in the terminal to run the app.
+
 To see a live demo without downloading the project files, see this link: https://brave-poincare-eefe40.netlify.com
