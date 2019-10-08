@@ -7,12 +7,13 @@ Because this is an app that fetches data which can be prone to errors on flickr'
 
  
 When running this app a text editor there are 2 things you must do:
-  1.  Create a config.js inside src/App.js and place your api key inside the const apiKey
+  1.  Create a config.js file inside src/App.js and provide your api key
 
      ```
      const apiKey = 'YOUR API KEY NEEDS TO GO HERE';
      export default apiKey;
      ```
-  2.  install modules with 'npm install'
+  2.  run 'npm install' in the terminal to install modules
+  3.  run 'npm start' to start the app
 
 To see a live demo without downloading the project files, see this link: https://brave-poincare-eefe40.netlify.com
