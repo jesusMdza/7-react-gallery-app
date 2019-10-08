@@ -8,8 +8,10 @@ Because this is an app that fetches data which can be prone to errors on flickr'
 
 When you want to run this app after downloading the project files, there are 2 things you must do:
   1.  Create a config.js file a place inside src/App.js
+
      ```
-     testing testing 123..
+     const apiKey = 'your api key here';
+     export default apiKey;
      ```
   2.  install modules with 'npm install'
 
