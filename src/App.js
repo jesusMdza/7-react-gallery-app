@@ -4,10 +4,10 @@ import { BrowserRouter, Route, Switch, Redirect } from 'react-router-dom';
 import axios from 'axios';
 import apiKey from './config';
 
-import SearchForm from './SearchForm';
-import Navigation from './Navigation';
-import PhotoContainer from './PhotoContainer';
-import PageNotFound from './PageNotFound';
+import SearchForm from './Components/SearchForm';
+import Navigation from './Components/Navigation';
+import PhotoContainer from './Components/PhotoContainer';
+import PageNotFound from './Components/PageNotFound';
 
 class App extends Component {
 
@@ -40,24 +40,24 @@ class App extends Component {
   // updates state value to user value and isLoaded to false
   // runs callback to fetch flickr data and change isLoaded to true
   getData = (value) => {
-      if (value !== this.state.value) {
-              this.setState( prevState => {
-                return {
-                  value: prevState.value = value,
-                  isLoaded: prevState.isLoaded = false
-                }
-            }, () => {
-                  axios.get(`https://www.flickr.com/services/rest/?method=flickr.photos.search&api_key=${apiKey}&tags=${this.state.value}&per_page=500&safe_search=1&format=json&nojsoncallback=1`)
-                  .then(response => { 
-                    this.setState( prevState => {
-                      return {
-                        photos: this.removeDuplicateOwnerPhotos(response.data.photos.photo),
-                        isLoaded: prevState.isLoaded = true
-                      }
-                    });
-                  })
-            });
-      }
+    if (value !== this.state.value) {
+      this.setState( prevState => {
+        return {
+          value: prevState.value = value,
+          isLoaded: prevState.isLoaded = false
+        }
+      }, () => {
+        axios.get(`https://www.flickr.com/services/rest/?method=flickr.photos.search&api_key=${apiKey}&tags=${this.state.value}&per_page=500&safe_search=1&format=json&nojsoncallback=1`)
+        .then(response => { 
+          this.setState( prevState => {
+            return {
+              photos: this.removeDuplicateOwnerPhotos(response.data.photos.photo),
+              isLoaded: prevState.isLoaded = true
+            }
+          });
+        })
+      });
+    }
   }
 
   render() {
