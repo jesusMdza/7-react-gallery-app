@@ -8,7 +8,7 @@ Because this is an app that fetches data which can be prone to errors on flickr'
 
 
 To run this app in a text editor after downloading the project files there are 3 things you must do:
-  1.  Create a config.js file inside src/App.js and provide your flickr api key. To obtain a key, create a flickr account and request a         non-commercial api key. Once obtaining a key, place it inside your config.js file. Example below.
+  1.  Create a 'config.js' file inside src/App.js and provide your flickr api key. To obtain a key, create a flickr account and request a         non-commercial api key. Once obtaining a key, place it inside your config.js file. Example below.
   
      const apiKey = 'YOUR API KEY NEEDS TO GO HERE';
      export default apiKey;
