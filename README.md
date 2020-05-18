@@ -15,4 +15,4 @@ Because this is an app that fetches data which can be prone to errors on flickr'
   2.  run `npm install`
   3.  run `npm start`
 
-To see a live demo without downloading the project files, see this link: https://brave-poincare-eefe40.netlify.com
+To see a live demo without downloading the project files, see this link: https://react-flickr-gallery-app.netlify.app
